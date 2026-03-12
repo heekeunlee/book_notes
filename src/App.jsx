@@ -93,13 +93,18 @@ function App() {
             onClick={() => setActiveTab('library')}
           >
             <div style={{
-              background: 'linear-gradient(135deg, var(--color-primary), #8a701c)',
-              padding: '0.5rem', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center'
+              background: 'var(--color-primary)',
+              padding: '0.4rem',
+              borderRadius: 'var(--radius-sm)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white'
             }}>
-              <BookOpen size={24} color="#000" />
+              <BookOpen size={20} />
             </div>
-            <h1 style={{ margin: 0, fontSize: '1.5rem', letterSpacing: '-0.02em' }}>
-              Book <span className="text-gradient">Notes</span>
+            <h1 style={{ margin: 0, fontSize: '1.25rem', letterSpacing: '-0.02em', fontWeight: 700 }}>
+              BookNotes
             </h1>
           </div>
 
@@ -122,11 +127,11 @@ function App() {
       <main className="page-wrapper container" style={{ paddingBottom: '6rem' }}>
         {activeTab === 'library' ? (
           <>
-            <div style={{ padding: 'var(--space-2xl) 0', textAlign: 'center' }}>
-              <h2 style={{ fontSize: '2.5rem', marginBottom: 'var(--space-md)' }}>
-                당신의 독서를 <span className="text-gradient">디지털화</span>하세요
+            <div style={{ padding: 'var(--space-3xl) 0 var(--space-xl)', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '3rem', marginBottom: 'var(--space-md)', fontWeight: 700, letterSpacing: '-0.03em' }}>
+                당신의 독서를 <span className="text-gradient">디지털화</span>하세요.
               </h2>
-              <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.125rem', maxWidth: '600px', margin: '0 auto' }}>
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.25rem', maxWidth: '600px', margin: '0 auto', fontWeight: 400 }}>
                 종이책에 남긴 메모와 밑줄, 이제 사진만 찍어서 간편하게 텍스트로 저장하세요.
               </p>
             </div>
@@ -152,7 +157,7 @@ function App() {
                         <h3 style={{ margin: 0, fontSize: '1.25rem' }}>{note.title}</h3>
                         <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>{note.author || '작자 미상'}</p>
                       </div>
-                      <div style={{ background: 'rgba(212, 175, 55, 0.1)', color: 'var(--color-primary)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-2xl)', fontSize: '0.75rem', fontWeight: 600 }}>
+                      <div style={{ background: 'rgba(0, 113, 227, 0.1)', color: 'var(--color-primary)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-2xl)', fontSize: '0.75rem', fontWeight: 600 }}>
                         {note.category}
                       </div>
                     </div>
@@ -211,18 +216,18 @@ function App() {
                   value={currentNote?.category || '문학'}
                   onChange={e => setCurrentNote({ ...currentNote, category: e.target.value })}
                   style={{
-                    width: '100%', padding: '0.75rem 1rem', background: 'rgba(0, 0, 0, 0.2)',
+                    width: '100%', padding: '0.875rem 1rem', background: 'var(--color-surface)',
                     border: '1px solid var(--color-border)', borderRadius: 'var(--radius-md)',
                     color: 'var(--color-text-primary)', fontFamily: 'var(--font-sans)', outline: 'none'
                   }}
                 >
-                  <option value="문학" style={{ background: 'var(--color-surface)' }}>문학/소설</option>
-                  <option value="인문" style={{ background: 'var(--color-surface)' }}>인문/철학</option>
-                  <option value="역사" style={{ background: 'var(--color-surface)' }}>역사</option>
-                  <option value="과학" style={{ background: 'var(--color-surface)' }}>과학/IT</option>
-                  <option value="경제" style={{ background: 'var(--color-surface)' }}>경제/경영</option>
-                  <option value="자기계발" style={{ background: 'var(--color-surface)' }}>자기계발</option>
-                  <option value="기타" style={{ background: 'var(--color-surface)' }}>기타</option>
+                  <option value="문학">문학/소설</option>
+                  <option value="인문">인문/철학</option>
+                  <option value="역사">역사</option>
+                  <option value="과학">과학/IT</option>
+                  <option value="경제">경제/경영</option>
+                  <option value="자기계발">자기계발</option>
+                  <option value="기타">기타</option>
                 </select>
               </div>
 
